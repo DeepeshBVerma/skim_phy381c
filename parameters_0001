@@ -1,0 +1,155 @@
+&parallelization
+n_procs_s =   2
+n_procs_v =  16
+n_procs_w =   4
+n_procs_x =   1
+n_procs_y =   1
+n_procs_z =  32
+n_procs_sim =   4096
+/
+
+&box
+n_spec =    2
+nx0    =    5
+nky0   =    1
+nz0    =  192
+nv0    =   48
+nw0    =   24
+
+kymin =   0.35000000    
+lv    =   3.00000    
+lw    =   9.00000    
+nexc  = -1
+adapt_lx = T
+x0    =   0.18000000    
+ky0_ind =   1
+/
+
+&in_out
+diagdir = '/global/cscratch1/sd/u14327/miller/mill1sa1/es/amasse_2/omns/omt20/ky035/scanfiles0000/'
+
+read_checkpoint  = F
+write_checkpoint = T
+
+istep_field  =     100
+istep_mom    =     200
+istep_nrg    =      10
+istep_omega  =      20
+istep_vsp    =     500
+istep_schpt  =    5000
+istep_energy =     100
+
+write_std = T
+write_h5  = T
+/
+
+&general
+nonlinear =   F
+comp_type = 'IV'
+perf_vec  =  2 2 2 1 1 2 2 2 2
+nblocks   =       3
+hypz_compensation =   T
+
+timescheme = 'RK4'
+dt_max     =   0.1100E-01
+dt_vlasov  =   0.1100E-01
+ev_coll    =    9.8235    
+
+timelim    =       1780
+ntimesteps =     100000
+simtimelim =   0.1000E+06
+
+beta       =    0.0000000    
+debye2     =    0.0000000    
+collision_op = 'landau'
+coll         =   0.14436250E-02
+coll_cons_model  = 'xu_rosenbluth'
+
+init_cond = 'alm'
+
+hyp_z =   -5.000    
+hyp_v =   0.2000    
+
+perf_tsteps =  -1
+
+/
+
+&geometry
+magn_geometry = 'miller'
+q0       =    4.0000000    
+shat     =   -1.0000000    
+amhd     =    3.0000000    
+major_R  =    1.0000000    
+minor_r  =    1.0000000    
+trpeps   =   0.18000000    
+kappa    =    1.8000000    
+delta    =   0.40000000    
+zeta     =    0.0000000    
+s_kappa  =    0.0000000    
+s_delta  =    0.0000000    
+s_zeta   =    0.0000000    
+drR      =    0.0000000    
+dpdx_term= 'gradB_eq_curv'
+dpdx_pm  =   0.18750000    
+norm_flux_projection  = F
+sign_Ip_CW =       1
+sign_Bt_CW =       1
+/
+
+&species
+name   = 'ions'
+omn    =    0.0000000    
+omt    =    20.000000    
+
+mass   =    1.0000000    
+temp   =    1.0000000    
+dens   =    1.0000000    
+charge =  1
+/
+
+&species
+name   = 'electrons'
+omn    =    0.0000000    
+omt    =    20.000000    
+
+mass   =   0.20000000    
+temp   =    1.0000000    
+dens   =    1.0000000    
+charge = -1
+/
+
+&info
+step_time  =     0.0066
+number of computed time steps =    1139
+time for initial value solver =      7.560
+calc_dt = T
+nltdt_off = F
+ev_coll_est  =    10.395358    
+init_time =     0.2446
+n_fields = 1
+n_moms   =  6
+nrgcols  = 10
+lx =   1.54759    
+ly =   17.9520    
+PRECISION  = DOUBLE
+ENDIANNESS = LITTLE
+OMP_NUM_THREADS =   1
+GIT_BRANCH = 0556385d1cf3812ccff82b195db2351fbc79abbc                    
+RELEASE = 1.9 - alpha 0
+nu_ei =   0.012912
+nustar_i =   0.113763
+nustar_e =   0.227525
+/
+
+&units
+Bref =   5.2999999999999998E+00
+Tref =   4.0000000000000000E+00
+nref =   1.0000000000000000E+01
+Lref =   6.2000000000000002E+00
+mref =   1.9990000000000001E+00
+/
+
+&bsgrid
+is_bsg = F
+/
+
